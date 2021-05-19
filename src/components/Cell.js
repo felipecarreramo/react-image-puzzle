@@ -3,11 +3,12 @@ import { useDrop } from 'react-dnd';
 import Piece from './Piece';
 
 const Cell = (props) => {
-  const { image, size, level, position, isOver } = props;
+  const { image, size, level, position, isOver, onSwap } = props;
   const side = (size / level);
   const x = (position % level) * side;
   const y = Math.floor(position / level) * side;
 
+  console.log('cell props: ', props);
 
   const [collectedProps, drop] = useDrop(() => ({
     accept: 'piece',
@@ -16,7 +17,7 @@ const Cell = (props) => {
       const sourcePosition = item.position;
       const dropPosition = props.position;
 
-      props.onSwap(sourcePosition, dropPosition);
+      onSwap(sourcePosition, dropPosition);
     },
     collect: monitor => ({
       isOver: !!monitor.isOver()
