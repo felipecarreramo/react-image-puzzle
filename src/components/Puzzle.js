@@ -6,9 +6,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { TouchBackend } from "react-dnd-touch-backend";
 import { DndProvider } from 'react-dnd'
 
-import HTML5Backend from 'react-dnd-html5-backend';
-import TouchBackend from "react-dnd-touch-backend";
-import { DragDropContext } from 'react-dnd';
 import isTouchDevice from 'is-touch-device';
 
 /**
