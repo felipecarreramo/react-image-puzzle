@@ -124,4 +124,4 @@ Puzzle.defaultProps = {
   onDone: () => {},
 };
 
-export default DragDropContext( isTouchDevice() ? HTML5Backend : TouchBackend)(Puzzle);
+export default DragDropContext( isTouchDevice() ? TouchBackend : HTML5Backend )(Puzzle);
