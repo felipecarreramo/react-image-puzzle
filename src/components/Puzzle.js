@@ -4,6 +4,7 @@ import Cell from './Cell';
 import HTML5Backend from 'react-dnd-html5-backend';
 import TouchBackend from "react-dnd-touch-backend";
 import { DragDropContext } from 'react-dnd';
+import isTouchDevice from 'is-touch-device';
 
 /**
  * Shuffles the passed array and returns a new one
@@ -22,11 +23,11 @@ function shuffle(a) {
   return b;
 }
 
-const isTouchDevice = !!("ontouchstart" in window || navigator.maxTouchPoints);
-
 class Puzzle extends React.Component {
   constructor(props) {
     super(props);
+
+    console.log('isTouchDevice', isTouchDevice)
 
     const { level } = props;
     const cells = level * level;
