@@ -12,9 +12,9 @@ const Cell = (props) => {
     accept: 'piece',
     drop: (item, monitor) => {
 
-      const item = monitor.getItem();
-      console.log('item: ', item);
-      const sourcePosition = item.position;
+      const sourceItem = monitor.getItem();
+      console.log('item: ', sourceItem);
+      const sourcePosition = sourceItem.position;
       const dropPosition = position;
 
       onSwap(sourcePosition, position);
@@ -25,8 +25,9 @@ const Cell = (props) => {
   }))
 
   return (
-    <div ref={drop} className='piece'>
+    <div className='piece'>
       <Piece
+        ref={drop}
         position={position}
         image={image}
         size={size}
