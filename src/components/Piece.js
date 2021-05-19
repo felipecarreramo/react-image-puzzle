@@ -3,10 +3,13 @@ import { useDrag } from 'react-dnd';
 
 const Piece = (props) => {
 
-  const { image, size, side, x, y, isOver } = props;
+  const { image, size, side, x, y, isOver, position } = props;
 
-  const [collected, drag] = useDrag(() => ({
-    type: 'piece'
+  const [collected, drag, dragPreview] = useDrag(() => ({
+    type: 'piece',
+    begin: () => {
+      return { position };
+    }
   }))
 
   return (
