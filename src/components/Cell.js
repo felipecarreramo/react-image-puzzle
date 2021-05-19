@@ -10,14 +10,13 @@ const Cell = (props) => {
 
   const [collectedProps, drop] = useDrop(() => ({
     accept: 'piece',
-    drop: (dropProps, monitor) => {
-      const item = monitor.getItem();
+    drop: (item, monitor) => {
 
       console.log('item: ', item);
-      console.log('props: ', dropProps);
+      console.log('monitor: ', monitor);
 
       const sourcePosition = item.position;
-      const dropPosition = dropProps.position;
+      const dropPosition = monitor.position;
 
       onSwap(sourcePosition, dropPosition);
     },
