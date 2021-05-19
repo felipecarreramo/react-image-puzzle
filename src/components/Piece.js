@@ -21,7 +21,7 @@ const Piece = (props) => {
       opacity: `${isOver ? '0.2' : '1'}`,
       cursor: 'move',
     }} ref={drag} {...collected}>
-
+    { props.position }
     </div>
   )
 
