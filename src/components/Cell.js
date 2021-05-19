@@ -25,9 +25,8 @@ const Cell = (props) => {
   }))
 
   return (
-    <div className='piece'>
+    <div ref={drop} className='piece'>
       <Piece
-        ref={drop}
         position={position}
         image={image}
         size={size}
