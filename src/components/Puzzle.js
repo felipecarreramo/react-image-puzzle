@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Cell from './Cell';
 import HTML5Backend from 'react-dnd-html5-backend';
+import TouchBackend from "react-dnd-touch-backend";
 import { DragDropContext } from 'react-dnd';
 
 /**
@@ -20,6 +21,8 @@ function shuffle(a) {
 
   return b;
 }
+
+const isTouchDevice = !!("ontouchstart" in window || navigator.maxTouchPoints);
 
 class Puzzle extends React.Component {
   constructor(props) {
@@ -120,4 +123,4 @@ Puzzle.defaultProps = {
   onDone: () => {},
 };
 
-export default DragDropContext(HTML5Backend)(Puzzle);
+export default DragDropContext( isTouchDevice ? HTML5Backend : TouchBackend)(Puzzle);
