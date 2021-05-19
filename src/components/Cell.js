@@ -13,8 +13,9 @@ const Cell = (props) => {
     accept
   }))
 
-  return <div ref={drop} className='piece'>
+  return <div className='piece'>
           <Piece
+            ref={drop} 
             position={position}
             image={image}
             size={size}
