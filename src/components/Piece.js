@@ -7,7 +7,7 @@ const Piece = (props) => {
 
   const [collected, drag, dragPreview] = useDrag(() => ({
     type: 'piece',
-    begin: () => {
+    item: () => {
       return { position };
     }
   }))
