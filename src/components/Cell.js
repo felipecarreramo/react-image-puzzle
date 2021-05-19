@@ -12,13 +12,12 @@ const Cell = (props) => {
     accept: 'piece',
     drop: (item, monitor) => {
 
+      const item = monitor.getItem();
       console.log('item: ', item);
-      console.log('monitor: ', monitor);
-
       const sourcePosition = item.position;
-      const dropPosition = monitor.position;
+      const dropPosition = position;
 
-      onSwap(sourcePosition, dropPosition);
+      onSwap(sourcePosition, position);
     },
     collect: monitor => ({
       isOver: !!monitor.isOver()
