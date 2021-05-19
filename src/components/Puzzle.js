@@ -27,7 +27,7 @@ class Puzzle extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log('isTouchDevice', isTouchDevice)
+    console.log('isTouchDevice', isTouchDevice())
 
     const { level } = props;
     const cells = level * level;
@@ -124,4 +124,4 @@ Puzzle.defaultProps = {
   onDone: () => {},
 };
 
-export default DragDropContext( isTouchDevice ? HTML5Backend : TouchBackend)(Puzzle);
+export default DragDropContext( isTouchDevice() ? HTML5Backend : TouchBackend)(Puzzle);
