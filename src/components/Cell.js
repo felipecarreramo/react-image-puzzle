@@ -8,14 +8,16 @@ const Cell = (props) => {
   const x = (position % level) * side;
   const y = Math.floor(position / level) * side;
 
-  console.log('cell props: ', props);
-
   const [collectedProps, drop] = useDrop(() => ({
     accept: 'piece',
-    drop: (props, monitor) => {
+    drop: (dropProps, monitor) => {
       const item = monitor.getItem();
+
+      console.log('item: ', item);
+      console.log('props: ', dropProps);
+
       const sourcePosition = item.position;
-      const dropPosition = props.position;
+      const dropPosition = dropProps.position;
 
       onSwap(sourcePosition, dropPosition);
     },
