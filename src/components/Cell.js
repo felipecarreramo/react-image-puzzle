@@ -11,7 +11,7 @@ const Cell = (props) => {
 
   const [collectedProps, drop] = useDrop(() => ({
     accept: 'piece',
-    drops: (props, monitor) => {
+    drop: (props, monitor) => {
       const item = monitor.getItem();
       const sourcePosition = item.position;
       const dropPosition = props.position;
