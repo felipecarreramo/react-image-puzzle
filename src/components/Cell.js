@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd';
 import Piece from './Piece';
 
 const Cell = (props) => {
-  const { image, size, level, position, connectDropTarget, isOver } = props;
+  const { image, size, level, position, isOver } = props;
   const side = (size / level);
   const x = (position % level) * side;
   const y = Math.floor(position / level) * side;
