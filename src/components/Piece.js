@@ -5,8 +5,11 @@ const Piece = (props) => {
 
   const { image, size, side, x, y, connectDragSource, isOver } = props;
 
-  const [collected, drag] = useDrag(() => ({
-    type: 'piece'
+  const [collected, drag, dragPreview] = useDrag(() => ({
+    type: 'piece',
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging(),
+    }),
   }))
 
   return (
@@ -20,7 +23,9 @@ const Piece = (props) => {
       backgroundPosition: `-${x}px -${y}px`,
       opacity: `${isOver ? '0.2' : '1'}`,
       cursor: 'move',
-    }} ref={drag} {...collected} />
+    }} ref={drag} {...collected}>
+
+    </div>
   )
 
 };
