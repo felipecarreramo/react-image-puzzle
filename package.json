@@ -14,9 +14,9 @@
     "is-touch-device": "^1.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
-    "react-dnd": "3.0.2",
-    "react-dnd-html5-backend": "5.0.1",
-    "react-dnd-touch-backend": "0.4.0",
+    "react-dnd": "^14.0.2",
+    "react-dnd-html5-backend": "^14.0.0",
+    "react-dnd-touch-backend": "^14.0.0",
     "styled-components": "^2.2.3"
   },
   "devDependencies": {
