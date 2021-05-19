@@ -43,8 +43,6 @@ class Puzzle extends React.Component {
 
   onSwap(sourcePosition, dropPosition) {
 
-    console.log(`source: ${sourcePosition} - drop: ${dropPosition}`);
-
     const oldPositions = this.state.positions.slice();
     const newPositions = [];
     let done = true;
